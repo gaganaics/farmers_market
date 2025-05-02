@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logo {
+    background: linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(57,125,68,1) 100%);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .navbar {
+      margin-top: 10px;
+    }
+
+
+  .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #08450c;
+  }
+
+
+  .navbar li {
+   display: inline-block;
+  }
+
+  .navbar li a {
+    display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+  }
+
+  .navbar li a:hover {
+    background-color: #06680f;
+  }
+
+  .search {
+   position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+  }
+
+  .search input {
+     width: 100%;
+      padding: 8px 35px 8px 10px;
+      border-radius: 10px;
+      border: 1px solid black;
+  }
+
+  .search img {
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+    cursor: pointer;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+  }
+
+  .container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #80ab7b;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+
+  .container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
+
+  .text {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar li {
+      flex: 100%;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    .logo {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="logo">
+  <a href="index.html">
+    <img src="logo.jpg" alt="icons">
+  </a>
+</div>
+
+<div class="search">
+  <input type="text" placeholder="Search...">
+  <img src="search icon.jpg" alt="search">
+</div>
+
+<div class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="project about page.html">About</a></li>
+    <li><a href="project contact page.html">Contact</a></li>
+    <li><a href="overlayyyy.html">Items</a></li>
+  </ul>
+</div>
+
+<div class="grid">
+  <div class="container">
+    <img src="vegitable.avif" alt="vegetable" class="image">
+    <div class="overlay">
+      <div class="text"><a href="project vegitable  page.html" style="color:white;">Vegetable</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src="fruits.jpeg" alt="fruits" class="image">
+    <div class="overlay">
+      <div class="text"><a href="project fruit page.html" style="color:white;">Fruits</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

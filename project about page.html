@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vegfoods</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      background-image: url("cntactbg.jpg");
+      font-family:  'Georgia', serif;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🔄 Header: Logo + Search in one row */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(249, 249, 249, 1) 0%, rgba(57, 125, 68, 1) 100%);
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+
+    
+
+    .search {
+      position: relative;
+      flex: 1;
+      max-width: 500px;
+      margin-left: 20px;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 6px 15px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .search img {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* 📂 Navigation */
+    .navbar {
+      background-color: #08450c;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .navbar li a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    /* 🧾 Heading Style */
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: black; /* Set text color to black */
+      text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* Add subtle white shadow for contrast */
+    }
+
+    /* 📷 + 📜 Content Layout */
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .imageee {
+      width: 45%;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .imageee img {
+         width: 74%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+    margin-top: -48px;
+    }
+
+    .imageee img:hover {
+      transform: scale(0.95);
+    }
+
+    .about {
+      background: #7aa677;
+      opacity: 0.95;
+      padding: 20px;
+      border-radius: 20px;
+      width: 50%;
+      min-width: 300px;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* 📱 Responsive */
+    @media screen and (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .imageee, .about {
+        width: 90%;
+      }
+
+      .about {
+        font-size: 16px;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .navbar li a {
+        font-size: 14px;
+      }
+
+      .search {
+        margin: 10px 0 0 0;
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔄 Header: Logo + Search -->
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Images\logo.jpg" alt="Logo" />
+      </a>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search..." />
+      <img src="search icon.jpg" alt="Search Icon" />
+    </div>
+  </div>
+
+  <!-- 📂 Navbar -->
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project about page.html">About</a></li>
+      <li><a href="project contact page.html">Contact</a></li>
+      <li><a href="overlayyyy.html">Items</a></li>
+    </ul>
+  </div>
+
+  <!-- 🧾 Heading -->
+  <h1><b>About</b></h1>
+
+  <!-- 📷 + 📜 Main Content -->
+  <div class="content">
+    <div class="imageee">
+      <img src="about img.svg" alt="Girl with vegetables">
+    </div>
+
+    <div class="about">
+      <h2><u>Welcome to Vegfoods</u></h2>
+      <p>
+        Far far away, behind the word mountains, far from the countries India and Consonantia, there live the blind texts.
+        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        <br><br>
+        But nothing the copy said could convince her, and so it didn't take long until a few insidious copywriters ambushed her,
+        made her drunk with longings and dragged her into their agency.
+        <br><br>
+         Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. But nothing the copy said could convince her, and so it didn't take long until a few insidious copywriters ambushed her,
+        made her drunk with longings and dragged her into their agency.
+        Far far away, behind the word mountains, far from the countries India and Consonantia, there live the blind texts.
+        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

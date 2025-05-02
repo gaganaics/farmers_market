@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruitable</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      background-color: #edfaee;
+      font-family:  'Georgia', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo {
+      background: linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(57,125,68,1) 100%);
+      height: 100px;
+      position: relative;
+    }
+
+    .search {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+    }
+
+    .search input {
+      padding: 6px 10px;
+      border-radius: 10px;
+      width: 300px;
+      height: 35px;
+      border: none;
+    }
+
+    .search img {
+      width: 20px;
+      height: 20px;
+      margin-left: -30px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .navbar {
+      margin-top: 10px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #08450c;
+    }
+
+    .navbar li {
+      display: inline-block;
+    }
+
+    .navbar li a {
+      color: white;
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    h1, h3 {
+      text-align: center;
+      font-family: "Lucida Handwriting", cursive;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 40px;
+      margin-top: -10px;
+    }
+
+    .slideshow-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* Login Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #7aa677;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .cancelbtn {
+      background-color: #f44336;
+      margin-top: 10px;
+    }
+
+    .psw {
+      float: right;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .search input {
+        width: 200px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      h3 {
+        font-size: 25px;
+      }
+
+      .navbar li {
+        float: none;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="logo">
+    <div class="search">
+      <input type="text" placeholder="Search...">
+      <img src="search icon.jpg" alt="Search Icon">
+    </div>
+    <button class="login-btn" onclick="document.getElementById('loginModal').style.display='block'">Login</button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project about page.html">About</a></li>
+      <li><a href="project contact page.html">Contact</a></li>
+      <li><a href="overlayyyy.html">Items</a></li>
+    </ul>
+  </div>
+
+  <!-- Headings (moved here) -->
+  <h1>Farmers</h1>
+  <h3>Market</h3>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="slide show img 1.jpg" alt="Slide 1">
+    </div>
+    <div class="mySlides fade">
+      <img src="slide show img 2.jpg" alt="Slide 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="slideshow3.webp" alt="Slide 3">
+    </div>
+  </div>
+
+  <div class="dot-container">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span onclick="document.getElementById('loginModal').style.display='none'" class="close">&times;</span>
+      <h4 style="text-align:center; color:white;">Login</h4>
+      <form action="/action_page.php" method="post">
+        <input type="text" name="uname" placeholder="Enter Username" required>
+        <input type="password" name="psw" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+        <button type="button" onclick="document.getElementById('loginModal').style.display='none'" class="cancelbtn"><a href="sign up.html">Sign up</a></button>
+        <div class="psw"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for slideshow -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+
+</body>
+</html>
